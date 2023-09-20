@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Playlist from "./Playlist";
+import SkeletonSidebar from "./skeleton/SkeletonSidebar";
 
 function Sidebar({cards}) {
+  const[visible, setVisible] = useState(false);
 
-  let cardsItems = cards.map((card) => <Playlist key={card.id} src={card.src}/>)
-
+  setTimeout(() => {
+    setVisible(true)
+  }, 5000)
+  
+  let cardsItems = cards.map((card) => visible ? <Playlist key={card.id} src={card.src}/> : <SkeletonSidebar/>)
+  
   return (
     <div className="main__sidebar sidebar">
       <div className="sidebar__personal">

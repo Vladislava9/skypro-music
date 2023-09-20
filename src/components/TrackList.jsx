@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Track from './track'
+import SkeletonTrack from './skeleton/SkeletonTrack';
 
 function TrackList() {
+  const[visible, setVisible] = useState(false);
+
+  setTimeout(() => {
+    setVisible(true)
+  }, 5000)
+
+  let trackItem = visible ? <Track/> : <SkeletonTrack/>
+  
   return (
     <div className="main__centerblock centerblock">
       <div className="centerblock__search search">
@@ -36,7 +45,7 @@ function TrackList() {
           </div>
         </div>
         <div className="content__playlist playlist">
-          <Track />
+          {trackItem}
         </div>
       </div>
     </div>
