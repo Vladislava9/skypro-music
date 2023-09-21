@@ -3,12 +3,12 @@ import MenuList from "./MenuList";
 import { useState } from "react";
 
 function NavMenu() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => {
-    setOpen((prev) => !prev);
+    setIsOpen((prev) => !prev);
   }
   
-  let burger = open ? <MenuList/>: null;
+  let burger = isOpen ? <MenuList/>: null;
 
   return (
     <nav className="main__nav nav">
