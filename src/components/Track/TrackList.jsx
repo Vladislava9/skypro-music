@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 
-import SkeletonTrack from "../skeleton/SkeletonTrack";
+import SkeletonTrack from "../Skeleton/SkeletonTrack";
 import Filter from "../Filter/Filter";
 import Track from "./Track";
-
-
-
-
-
 
 function TrackList() {
   const [isVisible, setIsVisible] = useState(false);

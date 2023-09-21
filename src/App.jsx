@@ -1,10 +1,9 @@
-import React from 'react'
-import './App.css'
-import NavMenu from './components/NavMenu'
-import AudioPlayer from './components/AudioPlayer'
-import Sidebar from './components/Sidebar'
-import TrackList from './components/Track/TrackList'
-
+import React from "react";
+import "./App.css";
+import NavMenu from "./components/NavMenu/NavMenu";
+import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
+import TrackList from "./components/Track/TrackList";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App(props) {
   return (
@@ -12,14 +11,14 @@ function App(props) {
       <div className="container">
         <main className="main">
           <NavMenu />
-          <TrackList/>
-          <Sidebar cards={props.state.cardImage}/>
+          <TrackList />
+          <Sidebar cards={props.state.cardImage} />
         </main>
-        <AudioPlayer/>
+        <AudioPlayer />
         <footer className="footer"></footer>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

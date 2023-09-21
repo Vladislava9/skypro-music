@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Playlist from "./Playlist";
-import SkeletonSidebar from "./skeleton/SkeletonSidebar";
+import SkeletonSidebar from "../Skeleton/SkeletonSidebar";
 
 function Sidebar({ cards }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,11 @@ function Sidebar({ cards }) {
   }, 5000);
 
   let cardsItems = cards.map((card) =>
-    isVisible ? <Playlist key={card.id} src={card.src} /> : <SkeletonSidebar key={card.id}/>
+    isVisible ? (
+      <Playlist key={card.id} src={card.src} />
+    ) : (
+      <SkeletonSidebar key={card.id} />
+    )
   );
 
   return (

@@ -6,9 +6,9 @@ function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => {
     setIsOpen((prev) => !prev);
-  }
-  
-  let burger = isOpen ? <MenuList/>: null;
+  };
+
+  let burger = isOpen ? <MenuList /> : null;
 
   return (
     <nav className="main__nav nav">
@@ -20,11 +20,9 @@ function NavMenu() {
         <span className="burger__line"></span>
         <span className="burger__line"></span>
       </div>
-      <div className="nav__menu menu">
-        {burger}
-      </div>
+      <div className="nav__menu menu">{burger}</div>
     </nav>
-  )
+  );
 }
 
 export default NavMenu;
