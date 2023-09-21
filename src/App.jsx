@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
 import NavMenu from './components/NavMenu'
-import TrackList from './components/TrackList'
 import AudioPlayer from './components/AudioPlayer'
 import Sidebar from './components/Sidebar'
+import TrackList from './components/Track/TrackList'
 
 
 function App(props) {

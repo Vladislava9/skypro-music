@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import Track from "./track";
-import SkeletonTrack from "./skeleton/SkeletonTrack";
-import Filter from "./Filter";
+
+import SkeletonTrack from "../skeleton/SkeletonTrack";
+import Filter from "../Filter/Filter";
+import Track from "./Track";
+
+
+
+
+
 
 function TrackList() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +15,6 @@ function TrackList() {
   setTimeout(() => {
     setIsVisible(true);
   }, 5000);
-
 
   return (
     <div className="main__centerblock centerblock">
@@ -25,7 +30,7 @@ function TrackList() {
         />
       </div>
       <h2 className="centerblock__h2">Треки</h2>
-      <Filter/>
+      <Filter />
       <div className="centerblock__content">
         <div className="content__title playlist-title">
           <div className="playlist-title__col col01">Трек</div>
@@ -37,7 +42,9 @@ function TrackList() {
             </svg>
           </div>
         </div>
-        <div className="content__playlist playlist">{isVisible ? <Track /> : <SkeletonTrack />}</div>
+        <div className="content__playlist playlist">
+          {isVisible ? <Track /> : <SkeletonTrack />}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TrackPlay from "./TrackPlay";
 import Volume from "./Volume";
 import SkeletonPlayTrack from "./skeleton/SkeletonPlayTrack";
+import TrackPlay from "./Track/TrackPlay";
 
 function AudioPlayer() {
   const [isVisible, setIsVisible] = useState(false);
