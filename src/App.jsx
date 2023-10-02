@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import NavMenu from "./components/NavMenu/NavMenu";
 import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
 import TrackList from "./components/Track/TrackList";

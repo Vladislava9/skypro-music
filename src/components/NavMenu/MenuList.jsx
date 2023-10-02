@@ -1,24 +1,25 @@
 import React from "react";
+import * as S from "./StyledMenuList"
 
 function MenuList() {
   return (
-    <ul className="menu__list">
-      <li className="menu__item">
-        <a href="#" className="menu__link">
+    <S.MenuList>
+      <S.MenuItem>
+        <S.MenuLink href="#">
           Главное
-        </a>
-      </li>
-      <li className="menu__item">
-        <a href="#" className="menu__link">
+        </S.MenuLink>
+      </S.MenuItem>
+      <S.MenuItem>
+        <S.MenuLink href="#">
           Мой плейлист
-        </a>
-      </li>
-      <li className="menu__item">
-        <a href="../signin.html" className="menu__link">
+        </S.MenuLink>
+      </S.MenuItem>
+      <S.MenuItem>
+        <S.MenuLink href="../signin.html">
           Войти
-        </a>
-      </li>
-    </ul>
+        </S.MenuLink>
+      </S.MenuItem>
+    </S.MenuList>
   );
 }
 

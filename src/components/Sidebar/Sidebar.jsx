@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Playlist from "./Playlist";
 import SkeletonSidebar from "../Skeleton/SkeletonSidebar";
+import * as S from "./StyledSidebar"
+
 
 function Sidebar({ cards }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,19 +20,19 @@ function Sidebar({ cards }) {
   );
 
   return (
-    <div className="main__sidebar sidebar">
-      <div className="sidebar__personal">
-        <p className="sidebar__personal-name">Pokolyavina Vlada</p>
-        <div className="sidebar__icon">
+    <S.MainSidebar>
+      <S.SidebarPersonal>
+        <S.SidebarPersonalName>Pokolyavina Vlada</S.SidebarPersonalName>
+        <S.SidebarIcon>
           <svg alt="logout">
             <use xlinkHref="img/icon/sprite.svg#logout"></use>
           </svg>
-        </div>
-      </div>
-      <div className="sidebar__block">
-        <div className="sidebar__list">{cardsItems}</div>
-      </div>
-    </div>
+        </S.SidebarIcon>
+      </S.SidebarPersonal>
+      <S.SidebarBlock>
+        <S.SidebarList>{cardsItems}</S.SidebarList>
+      </S.SidebarBlock>
+    </S.MainSidebar>
   );
 }
 

@@ -1,22 +1,24 @@
+import React from "react";
+import * as S from "./StyledVolume";
+
 function Volume() {
   return (
-    <div className="bar__volume-block volume">
-      <div className="volume__content">
-        <div className="volume__image">
-          <svg className="volume__svg" alt="volume">
+    <S.VolumeBlock>
+      <S.VolumeContent>
+        <S.VolumeImage>
+          <S.VolumeSvg>
             <use xlinkHref="img/icon/sprite.svg#icon-volume"></use>
-          </svg>
-        </div>
-        <div className="volume__progress _btn">
-          <input
-            className="volume__progress-line _btn"
+          </S.VolumeSvg>
+        </S.VolumeImage>
+        <S.VolumeProgress>
+          <S.VolumeProgressInput
             type="range"
             name="range"
           />
-        </div>
-      </div>
-    </div>
-  )
+        </S.VolumeProgress>
+      </S.VolumeContent>
+    </S.VolumeBlock>
+  );
 }
 
 export default Volume;

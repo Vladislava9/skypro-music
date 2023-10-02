@@ -1,21 +1,22 @@
 import React from "react";
+import * as S from "./StyledFilterButton"
 
 function FilterButton({ title, isOpen, onClick, data }) {
   return (
-    <>
-      <div className="filter__button button-author _btn-text" onClick={onClick}>
+    <S.FilterBox>
+      <S.FilterButtonWrapper onClick={onClick}>
         {title}
-      </div>
+      </S.FilterButtonWrapper>
       {isOpen && (
-        <div className="filter-list">
-          <ul className="filter-listitems">
+          <S.FilterList>
             {data.map((item, index) => (
-              <li key={index}>{item}</li>
+              <S.FilterListItem key={index}>
+                {item}
+              </S.FilterListItem>
             ))}
-          </ul>
-        </div>
+          </S.FilterList>
       )}
-    </>
+    </S.FilterBox>
   );
 }
 

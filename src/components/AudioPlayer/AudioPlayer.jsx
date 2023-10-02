@@ -2,70 +2,72 @@ import React, { useState } from "react";
 import Volume from "./Volume";
 import SkeletonPlayTrack from "../Skeleton/SkeletonPlayTrack";
 import TrackPlay from "../Track/TrackPlay";
+import { Bar, BarContent, BarPlayer, BarPlayerBlock, BarPlayerProgress, LikeWrapper, NextSvg, PlaySvg, PlayerButtonNext, PlayerButtonPlay, PlayerButtonPrev, PlayerButtonRepeat, PlayerButtonShuffle, PlayerControls, RepeatSvg, ShuffleSvg, TrackDislikeButton, TrackDislikeButtonSvg, TrackLikeButton, TrackLikeButtonSvg, TrackPlayWrapper } from "./StyledAudioPlayer";
+
 
 function AudioPlayer() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  setTimeout(() => {
-    setIsVisible(true);
-  }, 5000);
+  // setTimeout(() => {
+  //   setIsVisible(true);
+  // }, 5000);
 
-  let trackPlayItem = isVisible ? <TrackPlay /> : <SkeletonPlayTrack />;
+  // let trackPlayItem = isVisible ? <TrackPlay /> : <SkeletonPlayTrack />;
 
   return (
-    <div className="bar">
-      <div className="bar__content">
-        <div className="bar__player-progress"></div>
-        <div className="bar__player-block">
-          <div className="bar__player player">
-            <div className="player__controls">
-              <div className="player__btn-prev">
-                <svg className="player__btn-prev-svg" alt="prev">
+    <Bar>
+      <BarContent>
+        <BarPlayerProgress/>
+        <BarPlayerBlock>
+          <BarPlayer>
+            <PlayerControls>
+              <PlayerButtonPrev>
+                <PlaySvg alt="prev">
                   <use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
-                </svg>
-              </div>
-              <div className="player__btn-play _btn">
-                <svg className="player__btn-play-svg" alt="play">
+                </PlaySvg>
+              </PlayerButtonPrev>
+              <PlayerButtonPlay>
+                <PlaySvg alt="play">
                   <use xlinkHref="img/icon/sprite.svg#icon-play"></use>
-                </svg>
-              </div>
-              <div className="player__btn-next">
-                <svg className="player__btn-next-svg" alt="next">
+                </PlaySvg>
+              </PlayerButtonPlay>
+              <PlayerButtonNext>
+                <NextSvg alt="next">
                   <use xlinkHref="img/icon/sprite.svg#icon-next"></use>
-                </svg>
-              </div>
-              <div className="player__btn-repeat _btn-icon">
-                <svg className="player__btn-repeat-svg" alt="repeat">
+                </NextSvg>
+              </PlayerButtonNext>
+              <PlayerButtonRepeat>
+                <RepeatSvg alt="repeat">
                   <use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
-                </svg>
-              </div>
-              <div className="player__btn-shuffle _btn-icon">
-                <svg className="player__btn-shuffle-svg" alt="shuffle">
+                </RepeatSvg>
+              </PlayerButtonRepeat>
+              <PlayerButtonShuffle>
+                <ShuffleSvg alt="shuffle">
                   <use xlinkHref="img/icon/sprite.svg#icon-shuffle"></use>
-                </svg>
-              </div>
-            </div>
+                </ShuffleSvg>
+              </PlayerButtonShuffle>
+            </PlayerControls>
 
-            <div className="player__track-play track-play">
-              {trackPlayItem}
-              <div className="track-play__like-dis">
-                <div className="track-play__like _btn-icon">
-                  <svg className="track-play__like-svg" alt="like">
+            <TrackPlayWrapper>
+              {/* {trackPlayItem} */}
+              <LikeWrapper>
+                <TrackLikeButton>
+                  <TrackLikeButtonSvg alt="like">
                     <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-                  </svg>
-                </div>
-                <div className="track-play__dislike _btn-icon">
-                  <svg className="track-play__dislike-svg" alt="dislike">
+                  </TrackLikeButtonSvg>
+                </TrackLikeButton>
+                <TrackDislikeButton>
+                  <TrackDislikeButtonSvg alt="dislike">
                     <use xlinkHref="img/icon/sprite.svg#icon-dislike"></use>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </TrackDislikeButtonSvg>
+                </TrackDislikeButton>
+              </LikeWrapper>
+            </TrackPlayWrapper>
+          </BarPlayer>
           <Volume />
-        </div>
-      </div>
-    </div>
+        </BarPlayerBlock>
+      </BarContent>
+    </Bar>
   );
 }
 export default AudioPlayer;
