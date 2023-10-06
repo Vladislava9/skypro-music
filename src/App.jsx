@@ -1,23 +1,17 @@
 import React from "react";
-import NavMenu from "./components/NavMenu/NavMenu";
-import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
-import TrackList from "./components/Track/TrackList";
-import Sidebar from "./components/Sidebar/Sidebar";
+import AppRoutes from "./components/Routes/Routes";
 
 function App(props) {
-  return (
-    <div className="wrapper">
-      <div className="container">
-        <main className="main">
-          <NavMenu />
-          <TrackList />
-          <Sidebar cards={props.state.cardImage} />
-        </main>
-        <AudioPlayer />
-        <footer className="footer"></footer>
-      </div>
-    </div>
-  );
+
+  const handleSignIn = () => {
+    localStorage.setItem("user", "true");
+  };
+
+  const handleSignUp = () => {
+    localStorage.removeItem("user");
+  };
+
+  return <AppRoutes  onAuthButtonClick={handleSignIn} toGoOutButtonClick={handleSignUp}/>;
 }
 
 export default App;

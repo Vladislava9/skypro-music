@@ -6,13 +6,13 @@ import { Bar, BarContent, BarPlayer, BarPlayerBlock, BarPlayerProgress, LikeWrap
 
 
 function AudioPlayer() {
-  // const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // setTimeout(() => {
-  //   setIsVisible(true);
-  // }, 5000);
+  setTimeout(() => {
+    setIsVisible(true);
+  }, 5000);
 
-  // let trackPlayItem = isVisible ? <TrackPlay /> : <SkeletonPlayTrack />;
+  let trackPlayItem = isVisible ? <TrackPlay /> : <SkeletonPlayTrack />;
 
   return (
     <Bar>
@@ -49,7 +49,7 @@ function AudioPlayer() {
             </PlayerControls>
 
             <TrackPlayWrapper>
-              {/* {trackPlayItem} */}
+              {trackPlayItem}
               <LikeWrapper>
                 <TrackLikeButton>
                   <TrackLikeButtonSvg alt="like">
