@@ -13,7 +13,10 @@ function MainPage({ sideBarCards, toGoOutButtonClick }) {
         <Main>
           <NavMenu />
           <TrackList />
-          <Sidebar sideBarCards={sideBarCards} toGoOutButtonClick={toGoOutButtonClick}/>
+          <Sidebar
+            sideBarCards={sideBarCards}
+            toGoOutButtonClick={toGoOutButtonClick}
+          />
         </Main>
         <AudioPlayer />
         <Footer></Footer>

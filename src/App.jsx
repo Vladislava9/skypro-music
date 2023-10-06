@@ -2,7 +2,6 @@ import React from "react";
 import AppRoutes from "./components/Routes/Routes";
 
 function App(props) {
-
   const handleSignIn = () => {
     localStorage.setItem("user", "true");
   };
@@ -11,7 +10,12 @@ function App(props) {
     localStorage.removeItem("user");
   };
 
-  return <AppRoutes  onAuthButtonClick={handleSignIn} toGoOutButtonClick={handleSignUp}/>;
+  return (
+    <AppRoutes
+      onAuthButtonClick={handleSignIn}
+      toGoOutButtonClick={handleSignUp}
+    />
+  );
 }
 
 export default App;

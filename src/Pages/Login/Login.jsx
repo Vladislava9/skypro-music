@@ -30,7 +30,6 @@ const LoginPage = ({ onAuthButtonClick }) => {
             <Input type="password" name="password" placeholder="Пароль" />
             <ButtonEnter>
               <ButtonLinkEnter
-
                 onClick={() => {
                   onAuthButtonClick();
                   navigate("/", { replace: false });

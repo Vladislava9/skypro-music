@@ -1,8 +1,8 @@
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components";
 
 export const BasedButton = styled.div`
-cursor: pointer;
-`
+  cursor: pointer;
+`;
 export const Global = createGlobalStyle`
 * {
   margin: 0;
@@ -72,7 +72,7 @@ body {
   stroke: #ffffff;
   cursor: pointer;
 }
-`
+`;
 
 export const Main = styled.main`
   -webkit-box-flex: 1;
@@ -86,19 +86,19 @@ export const Main = styled.main`
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-`
+`;
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
   overflow: hidden;
   background-color: #383838;
-`
+`;
 export const Container = styled.div`
   max-width: 1920px;
   height: 100vh;
   margin: 0 auto;
   position: relative;
   background-color: #181818;
-`
+`;
 
-export const Footer = styled.footer``
+export const Footer = styled.footer``;

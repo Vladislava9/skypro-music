@@ -2,8 +2,29 @@ import React, { useState } from "react";
 import Volume from "./Volume";
 import SkeletonPlayTrack from "../Skeleton/SkeletonPlayTrack";
 import TrackPlay from "../Track/TrackPlay";
-import { Bar, BarContent, BarPlayer, BarPlayerBlock, BarPlayerProgress, LikeWrapper, NextSvg, PlaySvg, PlayerButtonNext, PlayerButtonPlay, PlayerButtonPrev, PlayerButtonRepeat, PlayerButtonShuffle, PlayerControls, RepeatSvg, ShuffleSvg, TrackDislikeButton, TrackDislikeButtonSvg, TrackLikeButton, TrackLikeButtonSvg, TrackPlayWrapper } from "./StyledAudioPlayer";
-
+import {
+  Bar,
+  BarContent,
+  BarPlayer,
+  BarPlayerBlock,
+  BarPlayerProgress,
+  LikeWrapper,
+  NextSvg,
+  PlaySvg,
+  PlayerButtonNext,
+  PlayerButtonPlay,
+  PlayerButtonPrev,
+  PlayerButtonRepeat,
+  PlayerButtonShuffle,
+  PlayerControls,
+  RepeatSvg,
+  ShuffleSvg,
+  TrackDislikeButton,
+  TrackDislikeButtonSvg,
+  TrackLikeButton,
+  TrackLikeButtonSvg,
+  TrackPlayWrapper,
+} from "./StyledAudioPlayer";
 
 function AudioPlayer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +38,7 @@ function AudioPlayer() {
   return (
     <Bar>
       <BarContent>
-        <BarPlayerProgress/>
+        <BarPlayerProgress />
         <BarPlayerBlock>
           <BarPlayer>
             <PlayerControls>
