@@ -14,7 +14,11 @@ import {
   WrapperLogin,
 } from "./StyledLogin";
 
-const LoginPage = ({ onAuthButtonClick }) => {
+const LoginPage = () => {
+  const handleSignIn = () => {
+    localStorage.setItem("user", "true");
+  };
+  
   const navigate = useNavigate();
   return (
     <WrapperLogin>
@@ -31,7 +35,7 @@ const LoginPage = ({ onAuthButtonClick }) => {
             <ButtonEnter>
               <ButtonLinkEnter
                 onClick={() => {
-                  onAuthButtonClick();
+                  handleSignIn();
                   navigate("/", { replace: false });
                 }}
               >
@@ -39,7 +43,7 @@ const LoginPage = ({ onAuthButtonClick }) => {
               </ButtonLinkEnter>
             </ButtonEnter>
             <ButtonSignup>
-              <ButtonLinkSignup to="/registration">
+              <ButtonLinkSignup to="/register">
                 Зарегистрироваться
               </ButtonLinkSignup>
             </ButtonSignup>

@@ -8,22 +8,22 @@ import RegistrationPage from "../../Pages/Registration";
 import Collection from "../../Pages/Collection";
 import { ProtectedRoute } from "../../Hok/ProtectedRoute";
 
-function AppRoutes({ onAuthButtonClick, toGoOutButtonClick }) {
+function AppRoutes() {
   return (
     <>
       <Routes>
         <Route
           path="/login"
-          element={<LoginPage onAuthButtonClick={onAuthButtonClick} />}
+          element={<LoginPage />}
         />
-        <Route path="/registration" element={<RegistrationPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
         <Route element={<ProtectedRoute />}>
           <Route
             path="/"
-            element={<MainPage toGoOutButtonClick={toGoOutButtonClick} />}
+            element={<MainPage />}
           />
-          <Route path="/playlist" element={<MyPlaylist />} />
-          <Route path="/collection/:id/*" element={<Collection />} />
+          <Route path="/favorites" element={<MyPlaylist />} />
+          <Route path="/category/:id" element={<Collection />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

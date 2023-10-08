@@ -6,7 +6,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import { connect } from "react-redux";
 import { Container, Footer, Main, Wrapper } from "../BaseStyledComponents";
 
-function MainPage({ sideBarCards, toGoOutButtonClick }) {
+function MainPage({ sideBarCards }) {
   return (
     <Wrapper>
       <Container>
@@ -15,7 +15,6 @@ function MainPage({ sideBarCards, toGoOutButtonClick }) {
           <TrackList />
           <Sidebar
             sideBarCards={sideBarCards}
-            toGoOutButtonClick={toGoOutButtonClick}
           />
         </Main>
         <AudioPlayer />
