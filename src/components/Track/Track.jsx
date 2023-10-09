@@ -1,39 +1,43 @@
-import React from 'react'
-import * as S from "./StyledTrack"
+import React from "react";
+import * as S from "./StyledTrack";
 
-function Track() {
+function Track({ song, onSaveDuration, onClickTrack }) {
+  const { id, album, name, author, logo, duration_in_seconds } = song;
+
   return (
     <S.PlaylistItem>
-      <S.PlaylistTrack>
+      <S.PlaylistTrack onClick={() => onClickTrack(id)}>
         <S.TrackTitle>
           <S.TrackTitleImage>
-            <S.TrackTitleSvg>
-              <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-            </S.TrackTitleSvg>
+            {logo ? (
+              logo
+            ) : (
+              <S.TrackTitleSvg>
+                <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
+              </S.TrackTitleSvg>
+            )}
           </S.TrackTitleImage>
-            <S.TrackTitleLink href="http://">
-              Guilt <S.TrackTitleSpan></S.TrackTitleSpan>
-            </S.TrackTitleLink>
+          <S.TrackTitleLink href="http://">
+            <S.TrackTitleSpan>{name}</S.TrackTitleSpan>
+          </S.TrackTitleLink>
         </S.TrackTitle>
         <S.TrackAuthor>
-          <S.TrackAuthorLink href="http://">
-            Nero
-          </S.TrackAuthorLink>
+          <S.TrackAuthorLink href="http://">{author}</S.TrackAuthorLink>
         </S.TrackAuthor>
         <S.TrackAlbum>
-          <S.TrackAlbumLink href="http://">
-            Welcome Reality
-          </S.TrackAlbumLink>
+          <S.TrackAlbumLink href="http://">{album}</S.TrackAlbumLink>
         </S.TrackAlbum>
         <S.TrackTime>
           <S.TrackTimeSvg alt="time">
             <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
           </S.TrackTimeSvg>
-          <S.TrackTimeText>4:44</S.TrackTimeText>
+          <S.TrackTimeText>
+            {onSaveDuration(duration_in_seconds)}
+          </S.TrackTimeText>
         </S.TrackTime>
       </S.PlaylistTrack>
     </S.PlaylistItem>
-  )
+  );
 }
 
-export default Track
+export default Track;

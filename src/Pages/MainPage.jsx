@@ -1,23 +1,32 @@
-import React from "react";
 import NavMenu from "../components/NavMenu/NavMenu";
 import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
 import TrackList from "../components/Track/TrackList";
 import Sidebar from "../components/Sidebar/Sidebar";
+import trackApi from "../api/trackApi";
 import { connect } from "react-redux";
 import { Container, Footer, Main, Wrapper } from "../BaseStyledComponents";
+import { useEffect, useState } from "react";
 
 function MainPage({ sideBarCards }) {
+  const [IDEntireTrack, setIDEntireTrack] = useState(null);
+  const [entireDataTrack, setEntireDataTrack] = useState([]);
+
+  useEffect(() => {
+    if (IDEntireTrack) {
+      trackApi.getEntireTrack(setEntireDataTrack, IDEntireTrack);
+    }
+}, [IDEntireTrack]);
+
   return (
     <Wrapper>
       <Container>
         <Main>
           <NavMenu />
-          <TrackList />
-          <Sidebar
-            sideBarCards={sideBarCards}
-          />
+          <TrackList onClickTrack={setIDEntireTrack} />
+          <Sidebar sideBarCards={sideBarCards} />
         </Main>
-        <AudioPlayer />
+        {IDEntireTrack ? <AudioPlayer dataTrack={entireDataTrack}/> : null  }
+
         <Footer></Footer>
       </Container>
     </Wrapper>

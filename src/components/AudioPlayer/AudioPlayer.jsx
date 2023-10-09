@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Volume from "./Volume";
 import SkeletonPlayTrack from "../Skeleton/SkeletonPlayTrack";
-import TrackPlay from "../Track/TrackPlay";
+import TrackPlay from "./TrackPlay";
 import {
   Bar,
   BarContent,
@@ -26,14 +26,15 @@ import {
   TrackPlayWrapper,
 } from "./StyledAudioPlayer";
 
-function AudioPlayer() {
+
+function AudioPlayer(props) {
   const [isVisible, setIsVisible] = useState(false);
 
   setTimeout(() => {
     setIsVisible(true);
   }, 5000);
 
-  let trackPlayItem = isVisible ? <TrackPlay /> : <SkeletonPlayTrack />;
+  let trackPlayItem = isVisible ? <TrackPlay dataTrack={props.dataTrack}/> : <SkeletonPlayTrack />;
 
   return (
     <Bar>
