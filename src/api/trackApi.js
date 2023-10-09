@@ -39,12 +39,3 @@ const trackApi = {
 };
 
 export default trackApi;
-// const [track, setTrack] = useState([]);
-
-// useEffect(() => {
-//   const getTracks = () => {
-//     return fetch("https://skypro-music-api.skyeng.tech/catalog/track/all/".then((response) => {
-//       setTrack(response.data)
-//     })
-//   }
-// }, [])
