@@ -4,7 +4,7 @@ import SkeletonSidebar from "../Skeleton/SkeletonSidebar";
 import * as S from "./StyledSidebar";
 import { useNavigate } from "react-router-dom";
 
-function Sidebar({ sideBarCards, toGoOutButtonClick }) {
+function Sidebar({ sideBarCards }) {
   const navigate = useNavigate();
 
   const [isVisible, setIsVisible] = useState(false);
@@ -21,13 +21,17 @@ function Sidebar({ sideBarCards, toGoOutButtonClick }) {
     )
   );
 
+  const handleLogOut = () => {
+    localStorage.removeItem("user");
+  };
+
   return (
     <S.MainSidebar>
       <S.SidebarPersonal>
         <S.SidebarPersonalName>Pokolyavina Vlada</S.SidebarPersonalName>
         <S.SidebarIcon
           onClick={() => {
-            toGoOutButtonClick();
+            handleLogOut();
             navigate("login", { replace: false });
           }}
         >

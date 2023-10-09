@@ -10,7 +10,7 @@ function MenuList() {
         </S.MenuLink>
       </S.MenuItem>
       <S.MenuItem>
-        <S.MenuLink to="/playlist">
+        <S.MenuLink to="/favorites">
           Мой плейлист
         </S.MenuLink>
       </S.MenuItem>
