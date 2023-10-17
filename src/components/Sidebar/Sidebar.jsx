@@ -32,7 +32,7 @@ function Sidebar({ sideBarCards }) {
         <S.SidebarIcon
           onClick={() => {
             handleLogOut();
-            navigate("login", { replace: false });
+            navigate("/login", { replace: false });
           }}
         >
           <svg alt="logout">

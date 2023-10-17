@@ -6,7 +6,8 @@ import MyPlaylist from "../../Pages/MyPlaylist";
 import LoginPage from "../../Pages/Login/Login";
 import RegistrationPage from "../../Pages/Registration";
 import Collection from "../../Pages/Collection";
-import { ProtectedRoute } from "../../Hok/ProtectedRoute";
+import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
+
 
 function AppRoutes() {
   return (
