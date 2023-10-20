@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { Container, Footer, Main, Wrapper } from "../BaseStyledComponents";
 import { useEffect, useState } from "react";
 
-function MainPage({ sideBarCards }) {
+function MainPage({ sideBarCards, handleLogOut }) {
   const [IDEntireTrack, setIDEntireTrack] = useState(null);
   const [entireDataTrack, setEntireDataTrack] = useState([]);
 
@@ -23,7 +23,7 @@ function MainPage({ sideBarCards }) {
         <Main>
           <NavMenu />
           <TrackList onClickTrack={setIDEntireTrack} />
-          <Sidebar sideBarCards={sideBarCards} />
+          <Sidebar sideBarCards={sideBarCards} handleLogOut={handleLogOut}/>
         </Main>
         {IDEntireTrack ? <AudioPlayer dataTrack={entireDataTrack}/> : null  }
 

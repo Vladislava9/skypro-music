@@ -6,7 +6,12 @@ function Track({ song, onSaveDuration, onClickTrack }) {
 
   return (
     <S.PlaylistItem>
-      <S.PlaylistTrack onClick={() => onClickTrack(id)}>
+      <S.PlaylistTrack
+        onClick={(e) => {
+          e.preventDefault();
+          onClickTrack(id);
+        }}
+      >
         <S.TrackTitle>
           <S.TrackTitleImage>
             {logo ? (

@@ -1,10 +1,7 @@
 import React from "react";
 import * as S from "./StyledTrackPlay";
 
-function TrackPlay({dataTrack}) {
-  debugger
-
-  
+function TrackPlay({dataTrack}) {  
   return (
     <S.TrackPlayContain>
       <S.TrackPlayImage>
@@ -13,8 +10,8 @@ function TrackPlay({dataTrack}) {
         </S.TrackPlaySvg>
       </S.TrackPlayImage>
       <S.TrackPlayAuthor>
-        <S.TrackPlayAuthorLink href="http://">{dataTrack.author !== "-"
-        ? `${dataTrack.author.slice(0, 6)} . . .`
+        <S.TrackPlayAuthorLink href="http://">{dataTrack.name !== "-"
+        ? `${dataTrack.name.slice(0, 6)} . . .`
         : " -"}</S.TrackPlayAuthorLink>
       </S.TrackPlayAuthor>
       <S.TrackPlayAlbum>

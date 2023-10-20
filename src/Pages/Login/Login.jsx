@@ -14,11 +14,7 @@ import {
   WrapperLogin,
 } from "./StyledLogin";
 
-const LoginPage = () => {
-  const handleSignIn = () => {
-    localStorage.setItem("user", "true");
-  };
-  
+const LoginPage = ({handleSignIn}) => {
   const navigate = useNavigate();
   return (
     <WrapperLogin>

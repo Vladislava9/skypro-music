@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Volume from "./Volume";
 import SkeletonPlayTrack from "../Skeleton/SkeletonPlayTrack";
 import TrackPlay from "./TrackPlay";
@@ -26,20 +26,53 @@ import {
   TrackPlayWrapper,
 } from "./StyledAudioPlayer";
 
-
 function AudioPlayer(props) {
   const [isVisible, setIsVisible] = useState(false);
 
   setTimeout(() => {
     setIsVisible(true);
-  }, 5000);
+  }, 2000);
 
-  let trackPlayItem = isVisible ? <TrackPlay dataTrack={props.dataTrack}/> : <SkeletonPlayTrack />;
+  let trackPlayItem = isVisible ? (
+    <TrackPlay dataTrack={props.dataTrack} />
+  ) : (
+    <SkeletonPlayTrack />
+  );
+  console.log(props.dataTrack);
+
+  const audioRef = useRef();
+  console.log(props.dataTrack.track_file);
+
+  useEffect(() => {
+    console.log(audioRef);
+    // audioRef?.current.addEventListener("load", () => {
+    //   console.log("hello");
+      audioRef?.current.play()
+    // })
+    // return () => {audioRef?.current.removeEventListener("load", null)}
+  }, [audioRef]);
+
+  const [isPlay, setIsPlay] = useState(true);
+
+  const handleStopOrPlay = () => {
+    if(isPlay) {
+      audioRef?.current.pause()
+      setIsPlay(false)
+    } else {
+      audioRef?.current.play()
+      setIsPlay(true)
+    }
+  }
+
+  //api volume - звук(><), loop (бесконечное проигрование), currentTime (текущее время проигрования)
+  //пример audioRef?.current.volume = 0-1
+  //useRef не приводит к перерендеру, а useState приводит !!! 
 
   return (
     <Bar>
       <BarContent>
         <BarPlayerProgress />
+        <audio ref={audioRef} src={props.dataTrack.track_file}></audio>
         <BarPlayerBlock>
           <BarPlayer>
             <PlayerControls>
@@ -48,10 +81,12 @@ function AudioPlayer(props) {
                   <use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
                 </PlaySvg>
               </PlayerButtonPrev>
-              <PlayerButtonPlay>
-                <PlaySvg alt="play">
+              <PlayerButtonPlay onClick={handleStopOrPlay}>
+                {isPlay ? <PlaySvg alt="pause">
+                  <use xlinkHref="img/icon/sprite.svg#icon-pause"></use>
+                </PlaySvg> : <PlaySvg alt="play">
                   <use xlinkHref="img/icon/sprite.svg#icon-play"></use>
-                </PlaySvg>
+                </PlaySvg>}
               </PlayerButtonPlay>
               <PlayerButtonNext>
                 <NextSvg alt="next">
