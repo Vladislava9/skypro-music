@@ -1,5 +1,20 @@
 import styled from "styled-components";
 
+export const Time = styled.div`
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #B1B1B1;
+text-align: right;
+font-variant-numeric: lining-nums proportional-nums;
+font-family: StratosSkyeng;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0.016px;
+`
+
 export const Bar = styled.div`
   position: absolute;
   bottom: 0;

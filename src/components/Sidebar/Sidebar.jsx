@@ -4,14 +4,14 @@ import SkeletonSidebar from "../Skeleton/SkeletonSidebar";
 import * as S from "./StyledSidebar";
 import { useNavigate } from "react-router-dom";
 
-function Sidebar({ sideBarCards }) {
+function Sidebar({ sideBarCards, handleLogOut }) {
   const navigate = useNavigate();
 
   const [isVisible, setIsVisible] = useState(false);
 
   setTimeout(() => {
     setIsVisible(true);
-  }, 5000);
+  }, 2000);
 
   let cardsItems = sideBarCards.map((card) =>
     isVisible ? (
@@ -20,10 +20,6 @@ function Sidebar({ sideBarCards }) {
       <SkeletonSidebar key={card.id} />
     )
   );
-
-  const handleLogOut = () => {
-    localStorage.removeItem("user");
-  };
 
   return (
     <S.MainSidebar>

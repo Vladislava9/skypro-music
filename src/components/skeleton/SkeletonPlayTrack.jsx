@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 
 const SkeletonPlayTrack = (props) => (
   <ContentLoader
-    speed={2}
+    speed={2.5}
     width={122}
     height={51}
     viewBox="0 0 122 51"
