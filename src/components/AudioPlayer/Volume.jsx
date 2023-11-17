@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./StyledVolume";
 
-function Volume() {
+function Volume({handleVolumeChange, volume}) {
   return (
     <S.VolumeBlock>
       <S.VolumeContent>
@@ -14,6 +14,12 @@ function Volume() {
           <S.VolumeProgressInput
             type="range"
             name="range"
+            onChange={handleVolumeChange}
+            value={volume}
+            max={1}
+                  min={0}
+                  step={0.01}
+            
           />
         </S.VolumeProgress>
       </S.VolumeContent>
